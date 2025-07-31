@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Personal Expense Manager</string>
+    <string name="welcome_message">Welcome, Student!</string>
+    <string name="budget_overview">Budget Overview</string>
+    <string name="set_budget">Set Budget</string>
+    <string name="view_reports">View Spending Reports</string>
+    <string name="view_expenses">View Expenses</string>
+    <string name="add_expense">Add New Expense</string>
+    <string name="sort_expenses">Sort Expenses</string>
+    <string name="expenses_list">Expenses List</string>
+    <string name="sort_filter">Sort &amp; Filter</string>
+    <string name="category">Category:</string>
+    <string name="sort_by">Sort by:</string>
+    <string name="budget_amount">Budget Amount (VND):</string>
+    <string name="month">Month:</string>
+    <string name="year">Year:</string>
+    <string name="expense_title">Title:</string>
+    <string name="expense_amount">Amount (VND):</string>
+    <string name="expense_category">Category:</string>
+    <string name="expense_date">Date:</string>
+    <string name="expense_description">Description (Optional):</string>
+    <string name="personal_spending_reports">Personal Spending Reports</string>
+    <string name="category_breakdown">Category Breakdown</string>
+    <string name="monthly_summary">Monthly Summary</string>
+    <string name="add_new_expense">Add New Expense</string>
+    <string name="set_monthly_budget">Set Monthly Budget</string>
+    <string name="select_date">Select Date</string>
+</resources>
