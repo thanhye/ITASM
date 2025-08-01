@@ -1,5 +1,6 @@
 package com.example.asm_final;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -76,10 +77,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupListeners() {
-        btnSetBudget.setOnClickListener(v -> budgetManager.showSetBudgetDialog());
-        btnViewReports.setOnClickListener(v -> reportManager.showSpendingReports());
-        btnAddExpense.setOnClickListener(v -> expenseManager.showAddExpenseDialog());
+        btnSetBudget.setOnClickListener(v -> openSetBudgetActivity());
+        btnViewReports.setOnClickListener(v -> openSpendingReportsActivity());
+        btnAddExpense.setOnClickListener(v -> openAddExpenseActivity());
         btnSortExpenses.setOnClickListener(v -> sortExpenses());
+    }
+
+    private void openSetBudgetActivity() {
+        Intent intent = new Intent(this, SetBudgetActivity.class);
+        intent.putExtra("userId", currentUserId);
+        startActivityForResult(intent, 1001);
+    }
+
+    private void openAddExpenseActivity() {
+        Intent intent = new Intent(this, AddExpenseActivity.class);
+        intent.putExtra("userId", currentUserId);
+        startActivityForResult(intent, 1002);
+    }
+
+    private void openSpendingReportsActivity() {
+        Intent intent = new Intent(this, SpendingReportsActivity.class);
+        intent.putExtra("userId", currentUserId);
+        startActivity(intent);
     }
 
     public void loadData() {
@@ -112,5 +131,14 @@ public class MainActivity extends AppCompatActivity {
         String sortBy = spinnerSortBy.getSelectedItem().toString();
         String selectedCategory = spinnerCategory.getSelectedItem().toString();
         expenseManager.sortExpenses(lvExpenses, sortBy, selectedCategory);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            // Refresh data when returning from any activity
+            loadData();
+        }
     }
 }
