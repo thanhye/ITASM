@@ -1,21 +1,11 @@
 package com.example.asm_final;
 
-import android.app.DatePickerDialog;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.database.Cursor;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Spinner;
-import android.widget.Toast;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 public class ExpenseManager {
     private DatabaseHelper dbHelper;
@@ -29,8 +19,7 @@ public class ExpenseManager {
         this.dbHelper = new DatabaseHelper(context);
     }
 
-    // Dialog method removed - now using AddExpenseActivity instead
-    // public void showAddExpenseDialog() { ... }
+
 
     public void loadExpenses(ListView listView) {
         List<String> expenseList = new ArrayList<>();

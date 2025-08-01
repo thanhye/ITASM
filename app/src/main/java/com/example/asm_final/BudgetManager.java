@@ -13,8 +13,7 @@ public class BudgetManager {
         this.dbHelper = new DatabaseHelper(context);
     }
 
-    // Dialog method removed - now using SetBudgetActivity instead
-    // public void showSetBudgetDialog() { ... }
+
 
     public double getBudget(int month, int year) {
         return dbHelper.getBudget(currentUserId, month, year);

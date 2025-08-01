@@ -1,10 +1,7 @@
 package com.example.asm_final;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.database.Cursor;
-import android.widget.TextView;
-import java.util.Calendar;
 
 public class ReportManager {
     private DatabaseHelper dbHelper;
@@ -18,8 +15,7 @@ public class ReportManager {
         this.dbHelper = new DatabaseHelper(context);
     }
 
-    // Dialog method removed - now using SpendingReportsActivity instead
-    // public void showSpendingReports() { ... }
+
 
     // Helper methods for safe cursor access (if needed in future)
     private String getStringFromCursor(Cursor cursor, String columnName, String defaultValue) {
